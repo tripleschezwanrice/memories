@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Mono, Roboto, Roboto_Mono, Roboto_Serif, Space_Mono} from 'next/font/google'
+import { IBM_Plex_Mono, Roboto, Roboto_Condensed, Roboto_Flex, Roboto_Mono, Roboto_Serif, Roboto_Slab, Space_Mono} from 'next/font/google'
 import './globals.css'
 import Sidebar from '@/components/Sidebar'
 
 
 const ibm = IBM_Plex_Mono({ subsets: ['latin'], weight:['100','200','300'] })
-const space = Space_Mono({ subsets: ['latin'], weight:['400','700'] })
-const roboto = Roboto_Mono({ subsets: ['latin'], weight:['400','700'] })
+const space = Space_Mono({ subsets: ['latin'], weight:['400','700'] }) 
+const roboto = Roboto_Flex({ subsets: ['latin'], weight:['400','700'] })
 
 
 

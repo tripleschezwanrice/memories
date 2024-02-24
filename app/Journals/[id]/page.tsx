@@ -1,11 +1,19 @@
 "use client"
 
 import { deleteJournal, getJournalById, updateJournal } from "@/data/actions";
+import { authConfig } from "@/lib/auth";
 import { TrashIcon } from "@heroicons/react/24/outline";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 
 export default function Page({ params }: { params: { id: string } }) {
+
+ 
+
   // Fetch initial journal data
   const [journal, setJournal] = useState({
     title: "",
@@ -51,7 +59,7 @@ export default function Page({ params }: { params: { id: string } }) {
         className="flex flex-col w-[90%] h-screen py-12 px-4 rounded text-3xl"
       >
          <div className="flex gap-4">
-        <div className="flex border-2 border-white items-center justify-between  rounded-xl w-full gap-4">
+        <div className="flex border-2 border-[#a7a1b0] items-center justify-between  rounded-xl w-full gap-4">
         <input
           name="title"
           type="text"
@@ -68,7 +76,6 @@ export default function Page({ params }: { params: { id: string } }) {
       
 
         </div>
-        <TrashIcon className="w-12 hover:text-red-600" onClick={()=>{deleteJournal(params.id)}}/>
        
 
         </div>
@@ -79,14 +86,25 @@ export default function Page({ params }: { params: { id: string } }) {
           onChange={handleInputChange}
           placeholder="Content"
           required
-          className="w-full rounded-xl p-2 mb-4 bg-transparent h-screen text-xl outline-none border-2 border-white mt-2"
+          className="w-full rounded-xl p-2 mb-4 bg-transparent h-screen text-xl outline-none border-2 border-[#a7a1b0] mt-2"
         />
+        <div className="w-full flex gap-2">
         <button
           type="submit"
-          className="border-2 border-purple-400 hover:bg-purple-400 hover:text-black duration-200   rounded-xl px-4 py-2"
+          className="border-2 hover:border-[#00298d] border-black hover:bg-[#00298d] hover:text-[#faf6ea]  duration-200   rounded-xl px-4 py-2 w-full"
         >
           Save
         </button>
+
+        <button
+        type="button"
+          onClick={()=>{deleteJournal(params.id)}}
+          className="border-2 border-black hover:bg-red-600 hover:text-[#faf6ea] duration-200 rounded-xl px-4 py-2 w-full"
+        >
+          Delete
+        </button>
+
+        </div>
       </form>
     </div>
   );
