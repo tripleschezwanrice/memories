@@ -45,7 +45,7 @@ console.log(last6)
             Previous Memories
           </p>
 
-          <div className="grid grid-cols-2 md:flex">
+          <div className="grid grid-cols-2 md:flex md:flex-col">
           {
             last6.length != 0 &&  last6.map((journal:any)=>(
               <Link href = {`Journals/${journal.id}`} key={journal.id} className={`mb-2 col-span-1 p-2 text-lg text-white border-2 bg-[#316bf8] gap-1 rounded-xl flex Link duration-200 hover:gap-6 `}>
