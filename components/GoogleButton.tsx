@@ -6,7 +6,7 @@ import { signIn } from "next-auth/react";
 export async function GoogleButton() {
    
     const handleClick = async () => {
-      await signIn("google", { callbackUrl: "http://localhost:3000/"});
+      await signIn("google", { callbackUrl: "https://memories4you.vercel.app/"});
 
     };
   

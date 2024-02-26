@@ -10,7 +10,7 @@ const Page = () => {
 
     // Define logout function
     const logout = async () => {
-        await signOut({ callbackUrl: "http://localhost:3000/"}); 
+        await signOut({ callbackUrl: "https://memories4you.vercel.app/"}); 
     };
 
     // Return JSX for the component

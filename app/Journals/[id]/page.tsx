@@ -1,12 +1,6 @@
 "use client"
 
 import { deleteJournal, getJournalById, updateJournal } from "@/data/actions";
-import { authConfig } from "@/lib/auth";
-import { TrashIcon } from "@heroicons/react/24/outline";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-
-import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 

@@ -7,7 +7,7 @@ export function GithubButton() {
 
 
   const handleClick = async () => {
-    await signIn("github", { callbackUrl: "http://localhost:3000/"});
+    await signIn("github", { callbackUrl: "https://memories4you.vercel.app/"});
   };
 
 
