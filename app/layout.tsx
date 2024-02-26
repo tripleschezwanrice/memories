@@ -23,13 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={`${roboto.className} flex`}>
+      <body className={`${roboto.className} md:flex`}>
         
-      <main className='w-[128px]'>
+      <main className='md:w-[128px]'>
   <Sidebar />
 </main>
 
-<div className='w-[calc(100vw-128px)]'>
+<div className='md:w-[calc(100vw-128px)]'>
   {children}
 </div>
         

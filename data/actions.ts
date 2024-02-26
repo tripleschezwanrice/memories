@@ -75,22 +75,22 @@ export async function updateJournal(
   id: string,
   journal: { title: string; content: string; createdat: string }
 ) {
-  const timestamp = Date.now();
-  const dateObject = new Date(timestamp);
+    const timestamp = Date.now();
+    const dateObject = new Date(timestamp);
 
-  const options = {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    timeZoneName: "short",
-  };
+    const options = {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short",
+    };
 
-  // Convert the date to a custom formatted string
-  const formattedDate = dateObject.toLocaleString("en-US", options);
+    // Convert the date to a custom formatted string
+    const formattedDate = dateObject.toLocaleString("en-US", options);
 
   await sql`
   UPDATE journals
@@ -121,7 +121,9 @@ export async function stats() {
 SELECT COUNT(*) AS journal_count
 FROM journals
 WHERE email = ${session?.user?.email};
-  `
+`
+
+
   return Data.rows[0].journal_count
 
 

@@ -17,8 +17,8 @@ export default async function Home() {
     signIn("google");
   }
 
-  // const data = await stats()
-  // console.log(data)
+  const data = await stats()
+  console.log(data)
 
   return (
     <div className="h-screen grid justify-center items-center w-full">
@@ -33,19 +33,19 @@ export default async function Home() {
 
          <div className="flex items-center justify-around gap-2">
           <p className="text-nowrap">Memories Created</p>
-          <div className="w-full bg-black min-w-[500px] h-[1px]"></div>
-          <p>3</p>
+          <div className=" bg-black   w-[30vw] h-[1px]"></div>
+          <p>{data}</p>
          </div>
 
          <div className="flex items-center justify-around gap-2">
           <p className="text-nowrap">Average Words/Memory</p>
-          <div className="w-full bg-black min-w-[500px] h-[1px]"></div>
+          <div className=" bg-black w-[30vw] h-[1px]"></div>
           <p>280</p>
          </div>
         
          <div className="flex items-center justify-around gap-2">
           <p className="text-nowrap">Last Seen</p>
-          <div className="w-full bg-black min-w-[500px] h-[1px]"></div>
+          <div className=" bg-black w-[30vw] h-[1px]"></div>
           <p>12/2/24</p>
          </div>
 

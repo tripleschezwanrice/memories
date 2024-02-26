@@ -99,7 +99,7 @@ export default function Page({ params }: { params: { id: string } }) {
         <button
         type="button"
           onClick={()=>{deleteJournal(params.id)}}
-          className="border-2 border-black hover:bg-red-600 hover:text-[#faf6ea] duration-200 rounded-xl px-4 py-2 w-full"
+          className="border-2 border-black hover:border-red-600 hover:bg-red-600 hover:text-[#faf6ea] duration-200 rounded-xl px-4 py-2 w-full"
         >
           Delete
         </button>
