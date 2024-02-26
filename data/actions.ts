@@ -1,5 +1,8 @@
 "use server";
 
+import { DateTimeFormatOptions } from 'intl';
+
+
 import { authConfig } from "@/lib/auth";
 import { sql } from "@vercel/postgres";
 import { getServerSession } from "next-auth";
@@ -78,19 +81,19 @@ export async function updateJournal(
     const timestamp = Date.now();
     const dateObject = new Date(timestamp);
 
-    const options = {
-      weekday: "short",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      timeZoneName: "short",
-    };
+    const options: DateTimeFormatOptions = {
+    weekday: "long", // Adjust this value based on your preference
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "short"
+};
 
-    // Convert the date to a custom formatted string
-    const formattedDate = dateObject.toLocaleString("en-US", options);
+// Now, you can pass the options object to the toLocaleString method
+const formattedDate = dateObject.toLocaleString("en-US", options);
 
   await sql`
   UPDATE journals
